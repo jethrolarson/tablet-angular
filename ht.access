@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^/api/(.*)$ http://webservices.sys.id.build.com:8080/$1 [P]

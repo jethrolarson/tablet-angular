@@ -1,0 +1,9 @@
+<p>This is the partial for view 1.</p>
+<ul>
+	<h1>{{product.manufacturer}} {{product.productId}} - {{product.finish}}</h1>
+	<img ng-src="http://s1.img-b.com/build.com/imagebase/resized/330x320/{{finish.manufacturer}}images/{{finish.image}}"/>
+	<li ng-repeat="finish in product.finishes">
+		<img ng-src="http://s1.img-b.com/build.com/imagebase/resized/50x50/{{finish.manufacturer}}images/{{finish.image}}"/>
+	</li>
+	<div class="desc" ng-bind-html-unsafe="product.description"></div>
+</ul>
