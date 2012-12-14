@@ -42,6 +42,16 @@ function ProductController($scope,$http, $routeParams) {
 	$http.get('/api/build-product-webservices-1.0.0/services/products/imageGallery?productId='+productId+'&manufacturer='+manufacturer).success(function(data){
 		$scope.media = data;
 	});
+
+	$scope.openPanel = function(panel){
+		$scope.panel = panel;
+	};
+	$scope.isPanelActive = function(panel){
+		return $scope.panel == panel?"on":'';
+	};
+	$scope.closePanel = function(panel){
+		$scope.panel = '';
+	};
 }
 // ProductController.$inject = ['$scope,$http'];
 
