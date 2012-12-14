@@ -6,4 +6,4 @@ build.xml
 .project
 .settings
 .idea/*
-app/css
+app/css/*
