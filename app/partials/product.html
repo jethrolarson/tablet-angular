@@ -1,4 +1,4 @@
-<div id="back">
+<div class="back">
 	<a href="">&#9668; Back to search results</a>
 </div>
 <div id="prdBody">
@@ -22,13 +22,22 @@
 		</h1>
 		<div class="container">
 			<div class="grid_6">
-				<div>****o</div>
+				<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="stars r{{ratingAttr(product.rating)}}">
+					<meta itemprop="ratingValue" content = "{{product.rating}}"/>
+					<meta itemprop="worstRating" content = "1"/>
+					<meta itemprop="bestRating" content = "5"/>
+					<span></span>
+				</span>
 				<div ng-bind="product.finish"></div>
 				<b ng-bind="product.cost | dollars"></b>
 			</div>
 			<div class="grid_6">
-				<label>Qty <input type="number"/></label>
-				<button type="submit">Add to Cart</button>
+				<div class="number">
+					<div>
+						<span class="numDown">-</span><input type="number" value="1" name="quantity" step="1" min="1" id="quantity" class="priceAdjuster"/><span href="#numUp" class="numUp">+</span>
+					</div>
+				</div>
+				<button type="submit" id="addToCart" class="success">Add to Cart</button>
 			</div>
 		</div>
 	</div>
@@ -36,12 +45,12 @@
 <div class="grid_12">
 	<div id="desc" class="panel hide {{isPanelActive('desc')}}">
 		<a href="" class="openPanel" ng-click="openPanel('desc')">Description</a>
-		<a class="close" ng-click="closePanel('desc')">X</a>
+		<a class="close" ng-click="closePanel('desc')">&times;</a>
 		<div ng-bind-html-unsafe="product.description"></div>
 	</div>
 	<div id="specs" class="panel hide {{isPanelActive('specs')}}">
 		<a href="" class="openPanel" ng-click="openPanel('specs')">Specs</a>
-		<a class="close" ng-click="closePanel('specs')">X</a>
+		<a class="close" ng-click="closePanel('specs')">&times;</a>
 		<div>
 			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="specs data-table middle">
 			<tbody><tr>
@@ -133,7 +142,7 @@
 	</div>
 	<div id="reviews" class="panel hide {{isPanelActive('reviews')}}">
 		<a href="" class="openPanel" ng-click="openPanel('reviews')">Reviews</a>
-		<a class="close" ng-click="closePanel('reviews')">X</a>
+		<a class="close" ng-click="closePanel('reviews')">&times;</a>
 		<div>
 			Product is too frickin' big
 		</div>

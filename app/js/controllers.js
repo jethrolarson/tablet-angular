@@ -37,6 +37,7 @@ function ProductController($scope,$http, $routeParams) {
 			});
 		}
 		document.title = p.manufacturer+" "+ p.productId +" - "+ "Build.com";
+		p.rating = 4.5;
 		$scope.product = p;
 	});
 	$http.get('/api/build-product-webservices-1.0.0/services/products/imageGallery?productId='+productId+'&manufacturer='+manufacturer).success(function(data){
@@ -51,6 +52,17 @@ function ProductController($scope,$http, $routeParams) {
 	};
 	$scope.closePanel = function(panel){
 		$scope.panel = '';
+	};
+
+	$scope.ratingAttr = function(value) {
+		var converted = +value; // Make sure we have a number
+		var decimal = (converted - parseInt(converted, 10));
+		decimal = Math.round(decimal * 10);
+		if ( (decimal < 3) || (decimal > 7) ) {
+			return Math.round(converted)*10;
+		} else {
+			return (parseInt(converted, 10)+0.5)*10;
+		}
 	};
 }
 // ProductController.$inject = ['$scope,$http'];
