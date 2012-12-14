@@ -69,6 +69,14 @@ html,body{
   right: 0;
   top: 0;
 }
+ul.user-meta {
+  position: absolute;
+  right: 0
+}
+ul.user-meta li {
+  list-style-type: none;
+  display: inline;
+}
 
 #prdBody{
   margin-top: 10px;
