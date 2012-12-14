@@ -2,14 +2,15 @@
 	<a href="">&#9668; Back to search results</a>
 </div>
 <div id="prdBody">
-	
 	<ul class="finishes">
+		<!-- <hr class="overflow-top" /> -->
 		<li ng-repeat="finish in product.finishes">
 			<a href="#/product/{{product.manufacturer}}/{{product.productId}}/{{finish.uid}}"><img ng-src="{{finish.image|imagepath:product.manufacturer:'60x60'}}"/></a>
 		</li>
 		<li ng-repeat="img in product.media">
 			<a href="{{img.imageName|imagepath:product.manufacturer}}"><img ng-src="{{img.imageName|imagepath:product.manufacturer:'60x60'}}"/></a>
 		</li>
+		<!-- <hr class="overflow-bottom" /> -->
 	</ul>
 	<div class="imageWrap">
 		<img class="prdImage" ng-src="{{product.image|imagepath:product.manufacturer:'330x320'}}"/>
