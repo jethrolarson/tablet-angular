@@ -1,21 +1,43 @@
-<div id="prdBody" class="container">
-	<ul class="grid_1 finishes">
+<div id="back">
+	<a href="">&#9668; Back to search results</a>
+</div>
+<div id="prdBody">
+	
+	<ul class="finishes">
 		<li ng-repeat="finish in product.finishes">
-			<a href="{{finish.image|imagepath:product.manufacturer}}"><img ng-src="{{finish.image|imagepath:product.manufacturer:'60x60'}}"/></a>
+			<a href="#/product/{{product.manufacturer}}/{{product.productId}}/{{finish.uid}}"><img ng-src="{{finish.image|imagepath:product.manufacturer:'60x60'}}"/></a>
 		</li>
 		<li ng-repeat="img in product.media">
 			<a href="{{img.imageName|imagepath:product.manufacturer}}"><img ng-src="{{img.imageName|imagepath:product.manufacturer:'60x60'}}"/></a>
 		</li>
 	</ul>
-	<div class="grid_5">
+	<div class="imageWrap">
 		<img class="prdImage" ng-src="{{product.image|imagepath:product.manufacturer:'330x320'}}"/>
 	</div>
-	<div class="grid_6">
-		<h1>{{product.manufacturer}} {{product.productId}} - {{product.finish}}</h1>
-		<p ng-bind-html="product.cost | dollars"></p>
+	<div class="details">
+		<h1>
+			{{product.manufacturer}} {{product.productId}}
+			<b>{{product.productTitle}}</b>
+		</h1>
+		<div class="container">
+			<div class="grid_6">
+				<div>****o</div>
+				<div ng-bind="product.finish"></div>
+				<b ng-bind="product.cost | dollars"></b>
+			</div>
+			<div class="grid_6">
+				<label>Qty <input type="number"/></label>
+				<button type="submit">Add to Cart</button>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="grid_12">
-	Footer tabs
+	<nav class="tabs">
+		<a href="">Description</a>
+		<a href="">Specifications</a>
+		<a href="">Accessories</a>
+		<a href="">Reviews</a>
+	</nav>
 	<div class="desc hide" ng-bind-html-unsafe="product.description"></div>
 </div>
