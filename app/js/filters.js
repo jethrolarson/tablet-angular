@@ -10,6 +10,6 @@ angular.module('myApp.filters', []).
 		};
 	}).filter('imagepath',function(){
 		return function(name,manufacturer,resize){
-			return "http://s1.img-b.com/build.com/imagebase/"+(resize?'resized/'+resize+'/' :'')+ manufacturer.replace(/\s+/g, "").toLowerCase() + "images/" +name;
+			return "http://s1.img-b.com/build.com/imagebase/"+(resize?'resized/'+resize+'/' :'')+ (manufacturer||'').replace(/\s+/g, "").toLowerCase() + "images/" +name;
 		};
 	});

@@ -34,10 +34,13 @@
 </div>
 <div class="grid_12">
 	<nav class="tabs">
-		<a href="">Description</a>
+		<a href="" ng-click="openPanel('desc')">Description</a>
 		<a href="">Specifications</a>
 		<a href="">Accessories</a>
 		<a href="">Reviews</a>
 	</nav>
-	<div class="desc hide" ng-bind-html-unsafe="product.description"></div>
+	<div id="desc" class="panel hide {{isPanelActive('desc')}}">
+		<a class="close" ng-click="closePanel('desc')">X</a>
+		<div ng-bind-html-unsafe="product.description"></div>
+	</div>
 </div>

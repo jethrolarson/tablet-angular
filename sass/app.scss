@@ -1,5 +1,6 @@
 /* app css stylesheet */
-
+@import 'compass/css3';
+@import 'base';
 .temp {
   display:block;
   background-color: #eee;
@@ -33,7 +34,7 @@ html,body{
 }
 
 #header {
-  border-bottom: 0.1em solid black;
+  border-bottom: 1px solid black;
   padding: 0 0 5px;
   height: 30px;
   background-color: #fff;
@@ -61,8 +62,23 @@ html,body{
 .prdImage{border: 1px solid #ddd;}
 .finishes img{vertical-align: bottom;}
 
-.hide{display: none;}
-
+.panel{
+  position: fixed;
+  top: 100%;
+  width: 90%;
+  left: 5%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  padding: $p;
+  @include transition-property(top);
+  @include transition-duration(.4s);
+  &.on{
+    top: 15%;
+    @include transition-property(top);
+    @include transition-duration(.4s);
+  }
+}
 
 #main-search {
   position: absolute;
