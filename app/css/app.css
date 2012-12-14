@@ -1,3 +1,4 @@
+
 /* app css stylesheet */
 
 .temp {
@@ -19,24 +20,35 @@ ul.menu {
   list-style: none;
   padding: 0 0 0.5em;
   margin: 0;
+html,body{
+  width: 100%;height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
+*{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.finishes{
+  list-style: none;
+  margin: 0; padding:0 0 0 10px;
 
-.menu:before {
-  content: "[";
+.finishes a{
+  display: inline-block;
+  margin-bottom: 10px;
+  border: solid #ddd;
+  border-width: 1px;
+  max-height: 100%;
+  overflow: auto;
 }
+.finishes img{vertical-align: bottom;}
+.prdImage{margin-left: 70px;}
 
-.menu:after {
-  content: "]";
-}
+.hide{display: none;}
 
-.menu > li {
-  display: inline;
-}
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
+#prdBody{height: 100%; padding-bottom: 60px;}
 
 .menu > li:nth-child(1):before {
   content: "";
@@ -52,3 +64,19 @@ ul.menu {
 ul.ng-scope {
   margin-top: 20px;
 }
+
+.container{overflow:hidden;zoom:1;margin:0;padding:0}
+.container > *{float:left;padding-left:10px}
+.container > :first-child{padding-left:0!important}
+.container > .grid_12{padding:0}
+.grid_1{width:8.333%}
+.grid_2{width:16.667%}
+.grid_3{width:25%}
+.grid_4{width:33.333%}
+.grid_5{width:41.667%}
+.grid_6{width:50%}
+.grid_7{width:58.333%}
+.grid_8{width:66.667%}
+.grid_9{width:75%}
+.grid_10{width:83.333%}
+.grid_11{width:91.667%}
