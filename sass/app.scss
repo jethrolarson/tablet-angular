@@ -27,6 +27,7 @@ html,body{
   overflow: hidden;
   margin: 0;
   padding: 0;
+  font-family: "Helvetica Neue","Droid Sans", arial,sans-serif;
 }
 *{
   -webkit-box-sizing: border-box;
@@ -68,7 +69,6 @@ h1.site-logo {
 .prdImage{border: 1px solid #ddd;}
 .finishes img{vertical-align: bottom;}
 
-
 .panel{
   position: fixed;
   top: 100%;
@@ -76,15 +76,54 @@ h1.site-logo {
   left: 5%;
   height: 100%;
   background-color: #fff;
-  overflow: hidden;
+  border: solid $bc;
+  border-width: 1px 1px 0;
+  overflow: visible;
   padding: $p;
+  z-index: 100;
+  .openPanel{
+    margin-top: -36px;
+    left: -1px;
+    top: 0;
+    position: absolute;
+    background: #fff;
+    border: solid $bc;
+    border-width: 1px 1px 0;
+    padding: $u2 $u3;
+    text-decoration: none;
+  }
+  .close{
+    position: absolute;
+    top:0;
+    right: -1px;
+    border: solid $bc;
+    border-width: 1px 1px 0;
+    text-decoration: none;
+    padding: $u $u2;
+    @include transition-property(top);
+    @include transition-duration(.4s);
+  }
+  div{
+    max-height: 100%;
+  }
   @include transition-property(top);
   @include transition-duration(.4s);
   &.on{
     top: 15%;
     @include transition-property(top);
     @include transition-duration(.4s);
+    .close{
+      top: -27px;
+      @include transition-property(top);
+      @include transition-duration(.4s);
+
+    }
+    z-index: 99;
   }
+}
+
+#specs{
+  .openPanel{left: 120px}
 }
 
 .megaSearch {
