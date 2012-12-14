@@ -37,8 +37,14 @@ html,body{
 #header {
   border-bottom: 1px solid black;
   padding: 0 0 5px;
-  height: 30px;
+  height: 50px;
   background-color: #fff;
+}
+
+h1.site-logo {
+  position: absolute;
+  top: -15px;
+  left: 10px;
 }
 
 .finishes,
@@ -97,11 +103,8 @@ html,body{
     @include transition-property(top);
     @include transition-duration(.4s);
   }
-
-  
   div{
     max-height: 100%;
-
   }
   @include transition-property(top);
   @include transition-duration(.4s);
@@ -121,10 +124,34 @@ html,body{
 #specs{
   .openPanel{left: 120px}
 }
-#main-search {
+.megaSearch {
   position: absolute;
   right: 0;
   top: 0;
+  margin: 9px 15px 28px 0;
+  padding: 1px;
+  background-color: #999;
+  border-radius: 5px;
+  input{padding: 4px 3px; border-radius: 5px;}
+  button{
+    padding: 6px 12px;
+    .ie7 &{
+      padding: 3px 12px;
+    }
+    border: 1px solid #fff;
+  }
+}
+
+ul.user-meta {
+  position: absolute;
+  right: 230px;
+  top: 10px;
+  font-size: 10px;
+  & li {
+    list-style-type: none;
+    display: inline;
+    padding: 0 5px;
+  }
 }
 
 #prdBody{
