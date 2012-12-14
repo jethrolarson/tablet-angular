@@ -5,8 +5,9 @@
 
 function ProductController($scope,$http) {
 	
-
-	$http.get('/api/build-product-webservices-1.0.0/services/products?productId=k-690&manufacturer=kohler').success(function(data){
+	var productId = 'k-690',
+		manufacturer = 'kohler';
+	$http.get('/api/build-product-webservices-1.0.0/services/products?productId='+productId+'&manufacturer='+manufacturer).success(function(data){
 		data = data.filter(function(finish){
 			return finish.status == 'stock';
 		});
@@ -18,14 +19,17 @@ function ProductController($scope,$http) {
 			
 			finish = data[i];
 			p.finishes.push({
-				image: finish.image
-				,name: finish.finish
-				,cost: finish.cost
+				image: finish.image,
+				name: finish.finish,
+				cost: finish.cost
 			});
 		}
+		document.title = p.manufacturer+" "+ p.productId +" - "+ "Build.com";
 		$scope.product = p;
 	});
-	$scope.dog = 'woof';
+	$http.get('/api/build-product-webservices-1.0.0/services/products/imageGallery?productId='+productId+'&manufacturer='+manufacturer).success(function(data){
+		$scope.media = data;
+	});
 }
 // ProductController.$inject = ['$scope,$http'];
 
