@@ -33,14 +33,106 @@
 	</div>
 </div>
 <div class="grid_12">
-	<nav class="tabs">
-		<a href="" ng-click="openPanel('desc')">Description</a>
-		<a href="">Specifications</a>
-		<a href="">Accessories</a>
-		<a href="">Reviews</a>
-	</nav>
 	<div id="desc" class="panel hide {{isPanelActive('desc')}}">
+		<a href="" class="openPanel" ng-click="openPanel('desc')">Description</a>
 		<a class="close" ng-click="closePanel('desc')">X</a>
+		<div ng-bind-html-unsafe="product.description"></div>
+	</div>
+	<div id="specs" class="panel hide {{isPanelActive('specs')}}">
+		<a href="" class="openPanel" ng-click="openPanel('specs')">Specs</a>
+		<a class="close" ng-click="closePanel('specs')">X</a>
+		<div>
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" class="specs data-table middle">
+			<tbody><tr>
+			<th>
+			<a class="Tips" title="" data-text="Americans with Disabilities Act - Effective in 1992, this act places a number of construction demands on the plumbing industry.  The Act is administered on a state-by-state basis.">ADA</a>
+			</th>
+			<td>Yes</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="The country of manufacture or assembly for the product, before it was shipped to the USA for sale.">Country Of Origin</a>
+			</th>
+			<td>USA</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="Eco Friendly faucets feature water-saving settings that use use up to 32% less water.">Eco Friendly</a>
+			</th>
+			<td>No</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="This part covers the faucet stem and the hole in the fixture or wall.  Any decorative, threaded flange below or behind a faucet handle. Also an ornamental plate used at the base of a faucet to cover additional holes on a lavatory.">Escutcheon Included</a>
+			</th>
+			<td>Yes</td>
+			</tr>
+			<tr>
+			<th>
+			Faucet Centers 
+			</th>
+			<td>0</td>
+			</tr>
+			<tr>
+			<th>
+			Faucet Holes 
+			</th>
+			<td>1</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="Whether or not this product includes a filtering feature.">Filtering</a>
+			</th>
+			<td>No</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="Gallons Per Minute">Flow Rate (GPM)</a>
+			</th>
+			<td>2.20</td>
+			</tr>
+			<tr>
+			<th>
+			Handle Material 
+			</th>
+			<td>Metal</td>
+			</tr>
+			<tr>
+			<th>
+			Handle Style 
+			</th>
+			<td>Lever</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="Many faucets come packaged with a pair of handles, but some offer you a variety of options to match any decor.">Handles Included</a>
+			</th>
+			<td>Yes</td>
+			</tr>
+			<tr>
+			<th>
+			Height 
+			</th>
+			<td>16.63</td>
+			</tr>
+			<tr>
+			<th>
+			<a class="Tips" title="" data-text="The length (in inches) of the hose that comes with the product.">Hose Length</a>
+			</th>
+			<td>33</td>
+			</tr>
+			<tr>
+			<th>
+			Installation Type 
+			</th>
+			<td>Deck Mounted</td>
+			</tr>
+			</tbody></table>
+		</div>
+	</div>
+	<div id="reviews" class="panel hide {{isPanelActive('reviews')}}">
+		<a href="" class="openPanel" ng-click="openPanel('reviews')">Description</a>
+		<a class="close" ng-click="closePanel('reviews')">X</a>
 		<div ng-bind-html-unsafe="product.description"></div>
 	</div>
 </div>
