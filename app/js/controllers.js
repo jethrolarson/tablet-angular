@@ -3,10 +3,10 @@
 /* Controllers */
 
 
-function ProductController($scope,$http, $routeParams) {
+function ProductController($scope,$http,$routeParams) {
 	
-	var productId = $routeParams.productId,
-		manufacturer = $routeParams.manufacturer;
+	var productId = $routeParams.productId.toLowerCase(),
+		manufacturer = $routeParams.manufacturer.toLowerCase();
 	$http.get('/api/build-product-webservices-1.0.0/services/products',{
 		params: {
 			productId: productId,
@@ -40,7 +40,13 @@ function ProductController($scope,$http, $routeParams) {
 		p.rating = 4.5;
 		$scope.product = p;
 	});
-	$http.get('/api/build-product-webservices-1.0.0/services/products/imageGallery?productId='+productId+'&manufacturer='+manufacturer).success(function(data){
+	$http.get('/api/build-product-webservices-1.0.0/services/products/imageGallery',{
+		params:{
+			productId: productId,
+			manufacturer: manufacturer
+		},
+		cache: true
+	}).success(function(data){
 		$scope.media = data;
 	});
 

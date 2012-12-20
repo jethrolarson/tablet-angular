@@ -36,7 +36,7 @@ input,button{
   background-color: #fff;
 }
 
-h1.site-logo {
+.site-logo {
   position: absolute;
   top: -15px;
   left: 10px;
@@ -74,7 +74,8 @@ h1.site-logo {
   input{
     width: 200px;
     font-size: $fs;
-    padding: 4px 3px; border-radius: 5px;}
+    padding: 4px 3px; border-radius: 5px;
+  }
   button{
     padding: 6px 12px;
     font-size: $fs;
@@ -98,8 +99,8 @@ ul.user-meta {
 }
 
 #addToCart{
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 
 #prdBody{

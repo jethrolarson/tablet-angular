@@ -7,7 +7,7 @@
 		<li ng-repeat="finish in product.finishes">
 			<a href="#/product/{{product.manufacturer}}/{{product.productId}}/{{finish.uid}}"><img ng-src="{{finish.image|imagepath:product.manufacturer:'60x60'}}"/></a>
 		</li>
-		<li ng-repeat="img in product.media">
+		<li ng-repeat="img in media">
 			<a href="{{img.imageName|imagepath:product.manufacturer}}"><img ng-src="{{img.imageName|imagepath:product.manufacturer:'60x60'}}"/></a>
 		</li>
 		<!-- <hr class="overflow-bottom" /> -->
@@ -17,7 +17,8 @@
 	</div>
 	<div class="details">
 		<h1>
-			{{product.manufacturer}} {{product.productId}}
+			<span ng-bind="product.manufacturer"></span> 
+			<span ng-bind="product.productId"></span>
 			<b>{{product.productTitle}}</b>
 		</h1>
 		<div class="container">
